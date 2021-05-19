@@ -10,6 +10,10 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import  { useState } from 'react';
+import axios from 'axios';
+
+
 
 function Copyright() {
   return (
@@ -22,10 +26,6 @@ function Copyright() {
       {'.'}
     </Typography>
   );
-}
-
-function send_info(){
-    console.log("senfdfdfdding info...")
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +49,47 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
+    const [Person_FisrtName,setFirstName]=useState("");
+    const [Person_LastName,setLastName]=useState("");
+    const [Person_Email,setEmail]=useState("");
+    const [Person_Password,setPassword]=useState("");
+    const [Person_Unit,setUnit]=useState("");
+    const [Person_Idfid,setIdf_id]=useState("");
+
+    
+
   const classes = useStyles();
+
+    const Axios_function = () => {
+        
+     var json_details={
+        firstName: Person_FisrtName,
+        LastName: Person_LastName,
+        Email: Person_Email,
+        Password: Person_Password,
+        Unit: Person_Unit,
+        ID: Person_Idfid,
+    };
+
+    
+        axios.post('http://13.94.65.220/register', {
+            "firstname": "a",
+            "lastname": "a",
+            "email": "a",
+            "unit": "a",
+            "password": "a",
+            "idf_id": 1 })
+        .then( res => {
+            console.log(res)})
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
+    };
+
+
+
+
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -72,6 +112,7 @@ export default function SignUp() {
                 fullWidth
                 id="firstName"
                 label="First Name"
+                onChange={(event) => {setFirstName(event.target.value)}} //whenever the text field change, you save the value in state
                 autoFocus
               />
             </Grid>
@@ -84,6 +125,8 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange={(event) => {setLastName(event.target.value)}} //whenever the text field change, you save the value in state
+
               />
 
               
@@ -98,6 +141,8 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={(event) => {setEmail(event.target.value)}} //whenever the text field change, you save the value in state
+
               />
             </Grid>
             <Grid item xs={12}>
@@ -110,6 +155,8 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={(event) => {setPassword(event.target.value)}} //whenever the text field change, you save the value in state
+
               />
               
             </Grid>
@@ -123,6 +170,8 @@ export default function SignUp() {
                 type="Unit"
                 id="Unit"
                 autoComplete="current-Unit"
+                onChange={(event) => {setUnit(event.target.value)}} //whenever the text field change, you save the value in state
+
               />
             </Grid>
           </Grid>
@@ -136,6 +185,8 @@ export default function SignUp() {
                 type="idf_id"
                 id="idf_id"
                 autoComplete="current-idf_id"
+                onChange={(event) => {setIdf_id(event.target.value)}} //whenever the text field change, you save the value in state
+
               />
             </Grid>
           <Button
@@ -144,7 +195,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => { console.log('onClick'); }}          >
+            onClick={() => { Axios_function() }}          >
             Sign Up
           </Button>
           <Grid container justify="flex-end">
@@ -159,6 +210,11 @@ export default function SignUp() {
       <Box mt={5}>
         <Copyright />
       </Box>
+      <h1>{Person_FisrtName}</h1>
     </Container>
+
+
   );
+
+
 }
