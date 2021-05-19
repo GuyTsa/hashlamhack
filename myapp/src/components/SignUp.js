@@ -61,6 +61,7 @@ export default function SignUp() {
   const classes = useStyles();
 
     const Axios_function = () => {
+
         
      var json_details={
         firstName: Person_FisrtName,
@@ -72,15 +73,8 @@ export default function SignUp() {
     };
 
     
-        axios.post('http://13.94.65.220/register', {
-            "firstname": "a",
-            "lastname": "a",
-            "email": "a",
-            "unit": "a",
-            "password": "a",
-            "idf_id": 1 })
-        .then( res => {
-            console.log(res)})
+        axios.post('http://13.94.65.220/register', json_details)
+        .then( res => {console.log(res)})
         .catch(error => {
             console.error('There was an error!', error);
         });
@@ -200,7 +194,9 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+            <a href="SignIn.js">The freeCodeCamp Contribution Page</a> shows you how and where you can contribute to freeCodeCamp's community and growth.
+
+              <Link href="/SignIn" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
@@ -210,7 +206,6 @@ export default function SignUp() {
       <Box mt={5}>
         <Copyright />
       </Box>
-      <h1>{Person_FisrtName}</h1>
     </Container>
 
 
