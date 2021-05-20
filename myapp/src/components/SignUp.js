@@ -101,7 +101,7 @@ export default function SignUp() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+         הרשמה
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -113,7 +113,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label="שם פרטי"
                 onChange={(event) => {setFirstName(event.target.value)}} //whenever the text field change, you save the value in state
                 autoFocus
               />
@@ -124,7 +124,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="lastName"
-                label="Last Name"
+                label="שם משפחה"
                 name="lastName"
                 autoComplete="lname"
                 onChange={(event) => {setLastName(event.target.value)}} //whenever the text field change, you save the value in state
@@ -140,7 +140,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="איימיל"
                 name="email"
                 autoComplete="email"
                 onChange={(event) => {setEmail(event.target.value)}} //whenever the text field change, you save the value in state
@@ -153,7 +153,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="סיסמא"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -168,7 +168,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="Unit"
-                label="Unit"
+                label="בסיס"
                 type="Unit"
                 id="Unit"
                 autoComplete="current-Unit"
@@ -183,7 +183,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="idf_id"
-                label="idf_id"
+                label="מספר אישי"
                 type="idf_id"
                 id="idf_id"
                 autoComplete="current-idf_id"
@@ -201,13 +201,13 @@ export default function SignUp() {
             
             
             >
-            Sign Up
+            הירשם
           </Button>
                        </Link>
           <Grid container justify="flex-end">
             <Grid item>
               <Link to="/SignIn" variant="body2">
-                Already have an account? Sign in
+                יש לך כבר חשבון? הכנס
               </Link>
 
             </Grid>

@@ -89,7 +89,7 @@ const Axios_function = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          כניסה
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -98,7 +98,7 @@ const Axios_function = () => {
             required
             fullWidth
             id="email"
-            label="first name"
+            label="שם פרטי"
             name="email"
             autoComplete="email"
             onChange={(event) => {setFirstName(event.target.value)}} //whenever the text field change, you save the value in state
@@ -111,7 +111,7 @@ const Axios_function = () => {
             required
             fullWidth
             name="password"
-            label="Password"
+            label="סיסמא"
             type="password"
             id="password"
             onChange={(event) => {setPassword(event.target.value)}} //whenever the text field change, you save the value in state
@@ -119,7 +119,7 @@ const Axios_function = () => {
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label="זכור אותי"
           />
           <Link to="/Welcom">
           <Button
@@ -130,18 +130,19 @@ const Axios_function = () => {
             onClick={() => { Axios_function() }}  
             className={classes.submit}
           >
-            Sign In
+            כניסה
           </Button>
           </Link>
 
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
+              {"  שכחת סיסמא "}
+             
+               </Link>
             </Grid>
             <Grid item>
-            <Link to="/SignUp"> {"Don't have an account? Sign Up"}  </Link>
+            <Link to="/SignUp"> {"אין לך חשבון? הירשם"}  </Link>
 
                
             </Grid>
@@ -149,7 +150,6 @@ const Axios_function = () => {
         </form>
       </div>
       <Box mt={8}>
-        <Copyright />
       </Box>
     </Container>
 

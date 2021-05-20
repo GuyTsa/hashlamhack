@@ -61,14 +61,14 @@ export default function GetService({handleClose}) {
 
         <form className={classes.container} noValidate>
         <TextField
-        label="Next appointment"
+        label="תאריך הגעה לבסיס"
         type="datetime-local"
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
         }}
              />
-               <TextField id="standard-basic" label="Unit" />
+               <TextField id="standard-basic" label="בסיס" />
 
          <Grid item>
            <Link to="/All">
@@ -79,7 +79,7 @@ export default function GetService({handleClose}) {
             className={classes.submit}
             onClick={handleClose}
             >
-            Send
+            שלח
           </Button>
               </Link>
           </Grid>

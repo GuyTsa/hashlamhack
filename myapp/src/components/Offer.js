@@ -78,7 +78,7 @@ console.log(json_details)
       <form className={classes.container} noValidate>
       <TextField
         id="datetime-local"
-        label="Time in pharmacy "
+        label="זמן הגעה למרפאה "
         type="datetime-local"
         defaultValue=""
         onChange={(event) => {setGo_to(event.target.value)}} //whenever the text field change, you save the value in state
@@ -94,7 +94,7 @@ console.log(json_details)
     <form className={classes.container} noValidate>
       <TextField
         id="datetime-local"
-        label="Back to unit "
+        label="זמן הגעה לבסיס "
         type="datetime-local"
         defaultValue=""
         onChange={(event) => {setBack_to(event.target.value)}} //whenever the text field change, you save the value in state
@@ -116,7 +116,7 @@ console.log(json_details)
     onClick={handleClose}  
     
     >
-        Send
+        שלח
       </Button>
     
           </Grid>

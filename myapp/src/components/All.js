@@ -32,7 +32,7 @@ function createData(name, calories, fat, carbs, protein, price) {
     protein,
     price,
     history: [
-      { date: 'דניאל', customerId: '17.05.2021', amount:" מחנה מקלף" },
+      { date: 'דניאל', customerId: '17.05.2021', amount:"  שלישות רמת גן" },
       { date: 'ירון', customerId: '11.05.2021', amount: "צריפין" },
     ],
   };
@@ -64,7 +64,7 @@ function All(props) {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
               <Typography variant="h6" gutterBottom component="div">
-                History
+                היסטוריה
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
