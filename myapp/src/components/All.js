@@ -73,6 +73,11 @@ function All(props) {
                     <TableCell>תאריך</TableCell>
                     <TableCell align="right">בסיס</TableCell>
                     <TableCell align="right">מספר כוכבים </TableCell>
+                    <TableCell align="right">
+                      
+                      
+                      
+                       </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -85,6 +90,9 @@ function All(props) {
                       <TableCell align="right">{historyRow.amount}</TableCell>
                       <TableCell align="right">
                         {3}
+                      </TableCell>
+                      <TableCell align="right">
+                       
                       </TableCell>
                     </TableRow>
                   ))}
@@ -117,7 +125,7 @@ All.propTypes = {
 };
 
 const rows = [
-  createData('רון כהן', "שלישות רמת גן",  "21.05.2021 12:30", "21.05.2021 11:30", "0504637456", 3.99),
+  createData('אבי רון ', "שלישות רמת גן",  "21.05.2021 12:30", "21.05.2021 11:30", "0504637456", 3.99),
   createData('גיא צברי', "שלישות רמת גן", "22.05.2021 12:30", "21.05.2021 19:30", "0543722125", 4.99),
   createData('אביעד אהרון', "שלישות רמת גן", "22.05.2021 16:30", "22.05.2021 15:00", "0536478843", 3.79),
   createData('שלום מאיר', "שלישות רמת גן", "24.05.2021 11:30", "21.05.2021 14:30", "0543456432", 2.5),

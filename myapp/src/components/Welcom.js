@@ -4,6 +4,10 @@ import './Welcom.css';
 import Offer from './Offer';
 import GetService from './GetService';
 import { Grid } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+
+
 
 function Welcom() {
   const [buttonPopup1, setButtonPopup1] = useState(false);
@@ -18,17 +22,24 @@ function Welcom() {
       <main>
         <h1 className='header'></h1>
         <br></br>
-<Grid xs={3}>
-        <button className="Button1" onClick={() => setButtonPopup1(true)}> מציע שירות</button>
+        <Grid container spacing={3}>
+
+          <Grid item xs={6}>
+        {/* <button className="Button1" onClick={() => setButtonPopup1(true)}> מציע שירות</button> */}
+        <Button onClick={() => setButtonPopup1(true)} variant="contained">מציע שירות</Button>
+          </Grid>
+          <Grid item xs={6}>
+        {/* <button className="Button2" onClick={() => setButtonPopup2(true)}> מקבל שירות </button> */}
+        <Button onClick={() => setButtonPopup2(true)} variant="contained">מקבל שירות</Button>
+          </Grid>
+        </Grid>
+
         <br></br>
-        </Grid>
-        <Grid xs={9}>        </Grid>
+      
 
 
-        <Grid  xs={3}>
 
-        <button className="Button2" onClick={() => setButtonPopup2(true)}> מקבל שירות </button>
-        </Grid>
+        
         <Popup trigger={buttonPopup1} setTrigger={setButtonPopup1}>
           <Offer handleClose={handleClose}/>
           

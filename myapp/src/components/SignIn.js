@@ -98,7 +98,7 @@ const Axios_function = () => {
             required
             fullWidth
             id="email"
-            label="שם פרטי"
+            label="מספר אישי"
             name="email"
             autoComplete="email"
             onChange={(event) => {setFirstName(event.target.value)}} //whenever the text field change, you save the value in state
