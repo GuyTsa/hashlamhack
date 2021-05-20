@@ -3,7 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -13,20 +12,26 @@ import Container from '@material-ui/core/Container';
 import  { useState } from 'react';
 import axios from 'axios';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="textSecondary" align="center">
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://material-ui.com/">
+//         Your Website
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -64,20 +69,23 @@ export default function SignUp() {
 
         
      var json_details={
-        firstName: Person_FisrtName,
-        LastName: Person_LastName,
-        Email: Person_Email,
-        Password: Person_Password,
-        Unit: Person_Unit,
-        ID: Person_Idfid,
+        firstname: Person_FisrtName,
+        lastname: Person_LastName,
+        email: Person_Email,
+        password: Person_Password,
+        unit: Person_Unit,
+        idf_id: Person_Idfid,
     };
+    window.location.href = "/";
+
+    console.log(4444)
 
     
-        axios.post('http://13.94.65.220/register', json_details)
+       /* axios.post('http://13.94.65.220/register', json_details)
         .then( res => {console.log(res)})
         .catch(error => {
             console.error('There was an error!', error);
-        });
+        });*/
     };
 
 
@@ -183,28 +191,30 @@ export default function SignUp() {
 
               />
             </Grid>
+            <Link to="/">
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => { Axios_function() }}          >
+            
+            
+            >
             Sign Up
           </Button>
+                       </Link>
           <Grid container justify="flex-end">
             <Grid item>
-            <a href="SignIn.js">The freeCodeCamp Contribution Page</a> shows you how and where you can contribute to freeCodeCamp's community and growth.
-
-              <Link href="/SignIn" variant="body2">
+              <Link to="/SignIn" variant="body2">
                 Already have an account? Sign in
               </Link>
+
             </Grid>
           </Grid>
         </form>
       </div>
       <Box mt={5}>
-        <Copyright />
       </Box>
     </Container>
 
